@@ -10,7 +10,7 @@ public class MoodAnalyzerTest {
 	public void givenMessage_Whensad_ShouldReturnSad() {
 		
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String message = "This is  sad  message";
+		String message = "This is sad message";
 		String expectedValue = "SAD";
 		String mood = moodAnalyzer.analyzeMood(message);
 		
@@ -22,7 +22,7 @@ public class MoodAnalyzerTest {
 	public void givenMessage_Whenhappy_ShouldReturnHappy() {
 		
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String message = "This is  happy  message";
+		String message = "This is happy message";
 		String expectedValue = "HAPPY";
 		String mood = moodAnalyzer.analyzeMood(message);
 		
