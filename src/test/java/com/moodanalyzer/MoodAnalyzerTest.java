@@ -22,13 +22,24 @@ public class MoodAnalyzerTest {
 
 	// Testing for catching exception and displaying our defined message
 	@Test
-	public void givenMessage_WhenNull_ShouldReturnHappy() throws MoodAnalysisException {
+	public void givenNullMood_Should_Throw_Exception() throws MoodAnalysisException {
 		try {
 			MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
 			moodAnalyzer.analyzeMood();
 		}
 		catch(MoodAnalysisException e) {
-			Assert.assertEquals("Please enter proper message", e.getMessage());
+			Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL, e.type);
+		}	
+	}
+	
+	@Test
+	public void givenEmptyMood_Should_Throw_Exception() throws MoodAnalysisException {
+		try {
+			MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
+			moodAnalyzer.analyzeMood();
+		}
+		catch(MoodAnalysisException e) {
+			Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, e.type);
 		}	
 	}
 }
